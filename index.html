@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Windows 11</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="icons">
+        
+        <img id="chromeIcon" src="chroma.png" width="74px" alt="">
+
+        <div>Chrome</div>
+
+    </div>
+    
+    
+   
+    <div class="taskbar">
+        <img src="besttaskbar1.png" alt="">
+        <img class="right" src="righttaskbar.jpg" alt="">
+        <div id="clock">
+       
+</div>
+
+<!-- optional small panel showing full date when clock clicked -->
+<div id="rightClock"></div>
+        </div>
+        <script>
+            function showClock(){
+                const now =new Date();
+                let h=now.getHours();
+                let m=now.getMinutes();
+                const ampm=h>=12?'PM':'AM';
+                h=h % 12 || 12;
+                if(m<10) m ="0"+m;
+            const time = h + ":" + m + " " + ampm;
+        const date =
+    now.toLocaleDateString("en-GB",{
+        day: "2-digit" ,month: "short",
+        year: "numeric"
+       }).replace(/ /g, " ");
+        document.getElementById("rightClock").innerHTML=time + "<br>" + date;
+    }
+    showClock();
+    setInterval(showClock,1000);
+        </script>
+        <div class="startmenu">
+            <img src="startmenu1.png" alt="">
+        </div>
+         <video autoplay muted>
+        
+        <source src="videoforw.mp4" type="video/mp4">
+    </video>
+    
+</body>
+<script src="script.js"></script>
+
+</html>
